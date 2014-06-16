@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+if [ -z "$DJANGO_SETTINGS_MODULE" ]; then
+   echo "You must set DJANGO_SETTINGS_MODULE"
+   exit 0  
+fi
+
+if [ -z "$SERVER_PORT" ]; then
+   echo "You must set SERVER_PORT"
+   exit 0
+fi
+
+django-admin.py runserver $SERVER_PORT
